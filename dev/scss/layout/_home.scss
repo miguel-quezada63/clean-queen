@@ -69,6 +69,11 @@
   padding: 7.5rem 0;
   align-content: center;
   justify-content: space-evenly;
+  @include respond(phone) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
   &-card {
     display: grid;
     width: 22.5%;
@@ -78,6 +83,9 @@
       "img"
       "header"
       "description";
+    @include respond(phone) {
+      width: 50%;
+    }
     &__img {
       grid-area: img;
       margin: 0 auto;
@@ -85,6 +93,7 @@
       height: 7.5rem;
     }
     &__header {
+      text-align: center;
       color: $text-color;
       font-weight: 500;
       margin: 1.5rem auto;
@@ -95,11 +104,87 @@
     }
     &__description {
       text-align: center;
-      margin: 1.5rem auto;
+      line-height: 2.25rem;
+      margin: 0 auto;
+      letter-spacing: 0.05rem;
       grid-area: description;
-      font-weight: 300;
-      color: black;
+      color: rgba($text-color, 0.85);
       font-size: 1.33rem;
     }
+  }
+}
+
+.testimonials {
+  padding: 7.5rem 0;
+  background: $primary-color;
+  &-container {
+    display: flex;
+    margin: 5rem;
+    justify-content: space-evenly;
+    @include respond(phone) {
+      flex-direction: column;
+      justify-content: initial;
+      align-items: center;
+    }
+  }
+}
+
+.testimonial {
+  width: 25%;
+  padding: 2.5rem;
+  display: grid;
+  grid-template-areas: "name" "description" "rating";
+  @include respond(phone) {
+    width: 75%;
+  }
+  &-name {
+    grid-area: name;
+    font-size: 1.75rem;
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+    margin: 1rem 0;
+    text-align: center;
+    margin: 0 auto;
+  }
+  &-description {
+    grid-area: description;
+    text-align: center;
+    margin: 2rem 0;
+    quotes: "\201C""\201D""\2018""\2019";
+    font-size: 1.25rem;
+    line-height: 2.5rem;
+    &::before {
+      content: open-quote;
+      font-size: 2rem;
+    }
+    &::after {
+      content: close-quote;
+      font-size: 2rem;
+    }
+  }
+
+  &-rating {
+    grid-area: rating;
+    margin: 0 auto;
+    &-item {
+      width: 2rem;
+      margin: 0 0.25rem;
+    }
+  }
+  &-underline {
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      height: 0.2rem;
+      background: $secondary-color-light;
+      width: 100%;
+      left: 0;
+      bottom: -0.5rem;
+    }
+  }
+
+  & > * {
+    color: $light-color;
   }
 }

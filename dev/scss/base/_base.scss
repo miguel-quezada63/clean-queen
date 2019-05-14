@@ -9,7 +9,7 @@ html {
   font-size: 62.5%;
   overflow-x: hidden;
   //defines rem sizing
-
+  scroll-behavior: smooth;
   @include respond(big-desktop) {
     font-size: 75%; //1rem = 12px
   }

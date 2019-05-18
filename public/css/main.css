@@ -247,22 +247,10 @@ a {
     @media only screen and (max-width: 37.5em) {
       .gallery-images {
         width: 90%; } }
-    .gallery-images:hover {
-      grid-gap: 7.5rem;
-      transition: 0.3s all; }
   .gallery-image {
     width: 100%;
     z-index: 1;
-    position: relative;
-    transition: 0.3s transform; }
-    .gallery-image:hover {
-      z-index: 100;
-      transform: scale(1.5);
-      transition: 0.3s transform; }
-    @media only screen and (max-width: 75em) {
-      .gallery-image:hover {
-        z-index: 1;
-        transform: none; } }
+    position: relative; }
 
 .navbar {
   position: fixed;

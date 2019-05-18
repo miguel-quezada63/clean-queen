@@ -218,28 +218,11 @@
     @include respond(phone) {
       width: 90%;
     }
-    &:hover {
-      grid-gap: 7.5rem;
-      transition: 0.3s all;
-    }
   }
 
   &-image {
     width: 100%;
     z-index: 1;
     position: relative;
-    @include transition(0.3s transform);
-    &:hover {
-      z-index: 100;
-      transform: scale(1.5);
-      @include transition(0.3s transform);
-    }
-
-    @include respond(tab-land) {
-      &:hover {
-        z-index: 1;
-        transform: none;
-      }
-    }
   }
 }

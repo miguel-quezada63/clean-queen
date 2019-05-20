@@ -306,3 +306,40 @@ a {
     background: #02b4c0; }
   .btn--cta {
     padding: 1.5rem 7.5rem; }
+
+.footer {
+  display: grid;
+  grid-template-areas: "logo none description" "contact none description";
+  grid-row-gap: 1.5rem;
+  padding: 7.5rem;
+  background: #243b71;
+  height: 100%; }
+  .footer-logo {
+    grid-area: logo; }
+    .footer-logo > a {
+      font-size: 3rem;
+      color: white; }
+  .footer-contact {
+    grid-area: contact;
+    display: flex;
+    width: 33.33333%;
+    justify-content: space-between; }
+    .footer-contact > a {
+      color: white; }
+    .footer-contact > a > i {
+      color: white;
+      font-size: 2.5rem; }
+  .footer-none {
+    grid-area: none;
+    width: 100%; }
+  .footer-description {
+    grid-area: description;
+    width: 100%; }
+    .footer-description__text {
+      width: 50%;
+      color: white;
+      font-family: "Open Sans Condensed";
+      font-weight: 500;
+      letter-spacing: 0.125rem;
+      font-size: 1.25rem;
+      width: 33.333%; }

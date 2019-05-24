@@ -188,3 +188,41 @@
     color: $light-color;
   }
 }
+
+.gallery {
+  padding: 7.5rem 0;
+  margin: 0 auto;
+  height: 100%;
+  &-header {
+    margin-bottom: 5rem;
+    font-weight: 300;
+    font-size: 3rem;
+    letter-spacing: 0.5rem;
+  }
+  &-images {
+    display: grid;
+    margin: 0 auto;
+    width: 80%;
+    grid-gap: 1rem;
+    justify-items: center;
+    grid-template-rows: repeat(2, 50%);
+    grid-template-columns: repeat(4, 1fr);
+    transition: 0.3s all;
+    @include respond(tab-port) {
+      grid-template-rows: repeat(4, 1fr);
+      grid-template-columns: repeat(2, 1fr);
+      &:hover {
+        grid-gap: none;
+      }
+    }
+    @include respond(phone) {
+      width: 90%;
+    }
+  }
+
+  &-image {
+    width: 100%;
+    z-index: 1;
+    position: relative;
+  }
+}

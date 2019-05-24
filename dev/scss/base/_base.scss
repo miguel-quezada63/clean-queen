@@ -1,0 +1,40 @@
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  //defines rem sizing
+  scroll-behavior: smooth;
+  @include respond(big-desktop) {
+    font-size: 75%; //1rem = 12px
+  }
+  @include respond(tab-land) {
+    font-size: 56.25%; //1rem == 9px;
+  }
+  @include respond(tab-port) {
+    font-size: 50%; //1rem == 8px
+  }
+}
+
+body {
+  // width: 100%;
+  color: $text-color;
+  height: 100%;
+  overflow: hidden;
+  -webkit-tap-highlight-color: transparent;
+  font-family: $primary-font;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+.container {
+  max-width: 80%;
+  margin: 0 auto;
+}

@@ -1,0 +1,50 @@
+.footer {
+  display: grid;
+  grid-template-areas:
+    "logo none description"
+    "contact none description";
+  grid-row-gap: 1.5rem;
+  padding: 7.5rem;
+  background: $primary-color;
+  height: 100%;
+  &-logo {
+    grid-area: logo;
+    & > a {
+      font-size: 3rem;
+      color: $light-color;
+    }
+  }
+
+  &-contact {
+    grid-area: contact;
+    display: flex;
+    width: 33.33333%;
+    justify-content: space-between;
+    & > a {
+      color: $light-color;
+    }
+    & > a > i {
+      color: $light-color;
+      font-size: 2.5rem;
+    }
+  }
+
+  &-none {
+    grid-area: none;
+    width: 100%;
+  }
+
+  &-description {
+    grid-area: description;
+    width: 100%;
+    &__text {
+      width: 50%;
+      color: $light-color;
+      font-family: "Open Sans Condensed";
+      font-weight: 500;
+      letter-spacing: 0.125rem;
+      font-size: 1.25rem;
+      width: 33.333%;
+    }
+  }
+}

@@ -1,13 +1,24 @@
 .footer {
   display: grid;
-  grid-template-areas:
-    "logo none description"
-    "contact none description";
+  grid-template-areas: "logo contact description";
+  grid-template-columns: 0.25fr 0.5fr 0.25fr;
   grid-row-gap: 1.5rem;
   padding: 7.5rem;
   background: $primary-color;
   height: 100%;
+  @include respond(tab-port) {
+    grid-template-areas: "logo" "contact" "description";
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-row-gap: 3.5rem;
+  }
+  @include respond(phone) {
+    grid-row-gap: 2.5rem;
+  }
   &-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     grid-area: logo;
     & > a {
       font-size: 3rem;
@@ -18,8 +29,9 @@
   &-contact {
     grid-area: contact;
     display: flex;
-    width: 33.33333%;
-    justify-content: space-between;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
     & > a {
       color: $light-color;
     }
@@ -36,15 +48,18 @@
 
   &-description {
     grid-area: description;
-    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
     &__text {
-      width: 50%;
       color: $light-color;
       font-family: "Open Sans Condensed";
       font-weight: 500;
       letter-spacing: 0.125rem;
       font-size: 1.25rem;
-      width: 33.333%;
+      @include respond(tab-port) {
+        text-align: center;
+      }
     }
   }
 }

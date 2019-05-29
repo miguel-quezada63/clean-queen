@@ -6,7 +6,6 @@ window.onscroll = () => {
     nav.classList.remove("navbar--color");
     nav.classList.add("navbar--transparent");
     for (let i = 0; i < navItem.length; i++) {
-      console.log(i);
       navItem[i].classList.remove("navbar--black");
       navItem[i].classList.add("navbar--white");
     }
@@ -14,7 +13,6 @@ window.onscroll = () => {
     nav.classList.add("navbar--color");
     nav.classList.remove("navbar--transparent");
     for (let i = 0; i < navItem.length; i++) {
-      console.log(i);
       navItem[i].classList.remove("navbar--white");
       navItem[i].classList.add("navbar--black");
     }
@@ -40,3 +38,38 @@ function openForm() {
     formOpen = !formOpen;
   }
 }
+
+function postData(url = ``, data = {}) {
+  return fetch(url, {
+    method: "POST",
+    mode: "cors",
+    cache: "no-cache",
+    credentials: "include",
+    referrer: "no-referrer",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(data)
+  })
+    .then(response => {
+      console.log(data);
+      return response.json();
+    })
+    .catch(err => {
+      console.log(err);
+    });
+}
+const form = document.querySelector("#contactForm");
+form.addEventListener("submit", event => {
+  event.preventDefault();
+  postData(event.target.action, {
+    name: document.getElementById("name").value,
+    phone: document.getElementById("phone").value,
+    email: document.getElementById("email").value,
+    date: document.getElementById("date").value,
+    cleanType: document.getElementById("cleanType").value,
+    description: document.getElementById("description").value
+  })
+    .then(data => console.log(JSON.stringify(data)))
+    .catch(error => console.error(error));
+});

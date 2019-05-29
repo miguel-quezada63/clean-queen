@@ -13,6 +13,7 @@
     />
 
     <link rel="stylesheet" href="../css/main.css" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js" defer></script>
     <script src="../js/main.js" defer></script>
   </head>
 
@@ -62,30 +63,40 @@
           <a onclick="openForm();">&times;</a>
         </h3>
         <div class="form-container">
-          <form action="/form-request" class="form" method="POST">
+          <form id="contactForm" action="/form" class="form" method="POST">
             <input
               class="form-input"
               type="text"
+              id="name"
               placeholder="Full Name"
               required
             />
-            <input class="form-input" type="tel" placeholder="Phone" required />
+            <input
+              class="form-input"
+              type="tel"
+              id="phone"
+              pattern="\d{3}[\-]\d{3}[\-]\d{4}"
+              placeholder="Phone"
+              required
+            />
             <input
               class="form-input"
               type="email"
+              id="email"
               placeholder="Email"
               required
             />
             <input
               class="form-input form-input__date"
               type="date"
+              id="date"
               placeholder="Cleaning Date:"
               required
             />
             <select
               class="form-input form-input__select"
               name="type-of-clean"
-              id="type-of-clean"
+              id="cleanType"
               required
             >
               <option value="" disabled selected>Type of building:</option>
@@ -96,6 +107,7 @@
             <textarea
               class="form-input form-input__details"
               rows="4"
+              id="description"
               placeholder="Extra Details"
             ></textarea>
             <button type="submit" class="btn btn--primary form-btn">

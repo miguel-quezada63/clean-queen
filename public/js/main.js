@@ -52,10 +52,11 @@ function postData(url = ``, data = {}) {
     body: JSON.stringify(data)
   })
     .then(response => {
-      console.log(data);
+      openModal(true);
       return response.json();
     })
     .catch(err => {
+      openModal(fail);
       console.log(err);
     });
 }
@@ -73,3 +74,5 @@ form.addEventListener("submit", event => {
     .then(data => console.log(JSON.stringify(data)))
     .catch(error => console.error(error));
 });
+
+function openModal() {}

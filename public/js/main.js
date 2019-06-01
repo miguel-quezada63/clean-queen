@@ -75,4 +75,32 @@ form.addEventListener("submit", event => {
     .catch(error => console.error(error));
 });
 
-function openModal() {}
+let modalOpen = false;
+
+function openModal(type) {
+  openForm();
+  let overlay = document.querySelector("#overlay");
+  let modalSuccess = document.querySelector("#modalSuccess");
+  if (!modalOpen) {
+    overlay.classList.remove("overlay--disabled");
+    overlay.classList.add("overlay--active");
+    modalOpen = !modalOpen;
+    if (type) {
+      modalSuccess.classList.remove("form--disabled");
+      modalSuccesss.classList.add("form--active");
+    } else {
+      console.log("Oops");
+    }
+    overlay.classList.remove("overlay--disabled");
+    overlay.classList.add("overlay--active");
+    modal.classList.remove("form--disabled");
+    modal.classList.add("form--active");
+    modalOpen = !modalOpen;
+  } else {
+    overlay.classList.remove("overlay--active");
+    overlay.classList.add("overlay--disabled");
+    modal.classList.remove("form--active");
+    modal.classList.add("form--disabled");
+    modalOpen = !modalOpen;
+  }
+}

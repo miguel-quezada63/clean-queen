@@ -6,5 +6,5 @@ const routes = require("./routes");
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 routes.appRoutes(app);
-app.use(express.static(path.join(__dirname, "../public")));
+app.use(express.static(path.join(__dirname, "../public/index.html")));
 app.listen(port);

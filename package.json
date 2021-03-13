@@ -4,7 +4,7 @@
   "description": "",
   "main": "server/app.js",
   "scripts": {
-    "run": "nodemon .server/app.js",
+    "start": "nodemon .server/app.js",
     "css": "node-sass ./public/scss/main.scss -o ./public/css",
     "css:watch": "npm run css && node-sass ./public/scss/main.scss -wo ./public/css"
   },

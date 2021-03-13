@@ -1,0 +1,29 @@
+.btn {
+  text-align: center;
+  font-family: $primary-font;
+  color: $light-color;
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  border: none;
+  outline: none;
+  border-radius: 3rem;
+  box-shadow: $box-shadow-transparent;
+  cursor: pointer;
+  transform: scale(0.98);
+  @include transition(0.2s all);
+  &:hover {
+    box-shadow: $box-shadow-sm;
+    background: rgba($primary-color-light, 0.85);
+    transform: scale(1);
+    transform: translateY(-0.25rem);
+    @include transition(0.2s all);
+  }
+  &--primary {
+    background: rgba($primary-color-light, 1);
+  }
+  &--cta {
+    padding: 1.5rem 7.5rem;
+  }
+}
